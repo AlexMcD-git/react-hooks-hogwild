@@ -1,7 +1,7 @@
 import React from "react";
 import piggy from "../assets/porco.png";
 
-const Nav = ({greaseFilterOn, onGreaseFilter, onUnhide, weightSort}) => {
+const Nav = ({greaseFilterOn, onGreaseFilter, onUnhide, weightSort, nameSort}) => {
 	return (
 		<div className="navWrapper">
 			<span className="headerText">HogWild</span>
@@ -13,12 +13,13 @@ const Nav = ({greaseFilterOn, onGreaseFilter, onUnhide, weightSort}) => {
 			</span>
 			<div>
 				<button onClick={weightSort}>Sort By Weight</button>
+				<button onClick={nameSort}>Sort By Name</button>
 				<p>Pig Filter</p>
-			<select value={greaseFilterOn?"Greased Only":"All Pigs"} onChange={onGreaseFilter}>
-				<option>All Pigs</option>
-				<option>Greased Only</option>
-			</select>
-			<button onClick={onUnhide}>Unhide All</button>
+				<select value={greaseFilterOn?"Greased Only":"All Pigs"} onChange={onGreaseFilter}>
+					<option>All Pigs</option>
+					<option>Greased Only</option>
+				</select>
+				<button onClick={onUnhide}>Unhide All</button>
 			</div>
 		</div>
 	);
